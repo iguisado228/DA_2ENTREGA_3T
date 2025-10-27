@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DA_2ENTREGA_DEF.Klaseak
 {
-    internal class Erabiltzailea
+    public class Erabiltzailea
     {
+        int Id { get; set; }
+        int Izena { get; set; }
+
     }
 }
