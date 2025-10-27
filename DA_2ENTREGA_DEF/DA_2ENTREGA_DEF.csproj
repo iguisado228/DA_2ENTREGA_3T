@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="asdf\asdf.cs" />
     <Compile Include="FROGA\froga.cs" />
     <Compile Include="Klaseak\Erabiltzailea.cs" />
     <Compile Include="Pantailak\Form1.cs">
