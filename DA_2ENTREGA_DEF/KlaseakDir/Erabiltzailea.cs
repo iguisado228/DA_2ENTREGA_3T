@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DA_2ENTREGA_DEF.Klaseak
+namespace DA_2ENTREGA_DEF.KlaseakDir
 {
     public class Erabiltzailea
     {
         int Id { get; set; }
         int Izena { get; set; }
-
     }
 }
