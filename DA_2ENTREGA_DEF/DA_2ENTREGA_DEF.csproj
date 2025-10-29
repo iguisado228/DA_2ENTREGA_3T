@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="FROGA\froga.cs" />
     <Compile Include="Klaseak\Erabiltzailea.cs" />
+    <Compile Include="Klaseak\Froga.cs" />
     <Compile Include="konexioa.cs" />
     <Compile Include="langilea.cs" />
     <Compile Include="login.cs">
