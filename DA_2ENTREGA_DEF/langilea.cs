@@ -5,7 +5,7 @@ using DA_2ENTREGA_DEF;
 
 namespace DA_ENTREGA2_DEF
 {
-    public class langilea
+    public class Langilea
     {
         public int id_langilea { get; set; }
         public string izena { get; set; }
@@ -20,7 +20,7 @@ namespace DA_ENTREGA2_DEF
         public string pasahitza { get; set; }
         public string arduraduna { get; set; }
 
-        public langilea(string erabiltzaile, string pasahitz)
+        public Langilea(string erabiltzaile, string pasahitz)
         {
             this.erabiltzaile_izena = erabiltzaile;
             this.pasahitza = pasahitz;
@@ -29,7 +29,7 @@ namespace DA_ENTREGA2_DEF
         public bool langileaLogin()
         {
             bool loginaEginda = false;
-            konexioa k = new konexioa();
+            Konexioa k = new Konexioa();
             k.konektatu();
 
             if (k.conn.State == System.Data.ConnectionState.Open)

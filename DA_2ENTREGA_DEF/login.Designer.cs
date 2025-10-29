@@ -1,6 +1,6 @@
 ﻿namespace DA_ENTREGA2_DEF
 {
-    partial class login
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.TXT_pasahitza = new System.Windows.Forms.TextBox();
             this.BTN_sartu = new System.Windows.Forms.Button();
             this.atera_BTN = new System.Windows.Forms.Button();
-            this.SuspendLayout();this.SuspendLayout();
+            this.SuspendLayout(); this.SuspendLayout();
             // 
             // LBL_erabiltzailea
             // 

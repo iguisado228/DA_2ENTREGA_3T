@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DA_ENTREGA2_DEF
 {
-    public partial class login : Form
+    public partial class Login : Form
     {
-        public login()
+        public Login()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
@@ -39,12 +39,12 @@ namespace DA_ENTREGA2_DEF
             string erabiltzailea = TXT_erabiltzailea.Text;
             string pasahitza = TXT_pasahitza.Text;
 
-            langilea l = new langilea(erabiltzailea, pasahitza);
+            Langilea l = new Langilea(erabiltzailea, pasahitza);
 
             if (l.langileaLogin())
             {
-                //Menu men = new Menu(l);
-                //men.Show();
+                Menu men = new Menu(l);
+                men.Show();
                 this.Hide();
             }
             else

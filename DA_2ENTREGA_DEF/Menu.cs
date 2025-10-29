@@ -1,14 +1,13 @@
-﻿using DA_ENTREGA2_DEF;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
-namespace DA_ENTREGA2
+namespace DA_ENTREGA2_DEF
 {
     public partial class Menu : Form
     {
-        private langilea langilea;
+        private Langilea langilea;
 
-        public Menu(langilea l)
+        public Menu(Langilea l)
         {
             InitializeComponent();
             langilea = l;
@@ -24,14 +23,14 @@ namespace DA_ENTREGA2
 
         private void erabiltzaileakKudeatu_BTN_Click(object sender, EventArgs e)
         {
-            // Abrir el formulario de gestión de usuarios
-            erabiltzaileakKudeatu kudeaketa = new erabiltzaileakKudeatu(langilea);
-            kudeaketa.ShowDialog();
+          
+            //erabiltzaileakKudeatu kudeaketa = new erabiltzaileakKudeatu(langilea);
+            //kudeaketa.ShowDialog();
         }
 
         private void atera_BTN_Click(object sender, EventArgs e)
         {
-            // Cierra la aplicación o vuelve al login
+           
             Application.Exit();
         }
 
@@ -48,16 +47,16 @@ namespace DA_ENTREGA2
         private void langileakKudeatu_BTN_Click(object sender, EventArgs e)
         {
             this.Hide();
-            langileakKudeatu l = new langileakKudeatu(langilea);
-            l.ShowDialog();
+           // langileakKudeatu l = new langileakKudeatu(langilea);
+            //l.ShowDialog();
             this.Show();
 
         }
 
         private void erabiltzaileakEzabatu_Click(object sender, EventArgs e)
         {
-            softDelete sd = new softDelete(langilea);
-            sd.ShowDialog();
+           // softDelete sd = new softDelete(langilea);
+           // sd.ShowDialog();
 
         }
 

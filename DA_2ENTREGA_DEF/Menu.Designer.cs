@@ -1,4 +1,4 @@
-﻿namespace DA_ENTREGA2
+﻿namespace DA_ENTREGA2_DEF
 {
     partial class Menu
     {

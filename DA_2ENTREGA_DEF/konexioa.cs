@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace DA_2ENTREGA_DEF
 {
-    internal class konexioa
+    internal class Konexioa
 
     {
         public virtual string Servidor { get; set; } = "127.0.0.1";
