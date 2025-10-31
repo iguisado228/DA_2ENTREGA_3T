@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DA_2ENTREGA_DEF;
+using System;
 using System.Windows.Forms;
+using static DA_2ENTREGA_DEF.ErabiltzaileakKudeatu;
 
 namespace DA_ENTREGA2_DEF
 {
@@ -24,19 +26,15 @@ namespace DA_ENTREGA2_DEF
         private void erabiltzaileakKudeatu_BTN_Click(object sender, EventArgs e)
         {
           
-            //erabiltzaileakKudeatu kudeaketa = new erabiltzaileakKudeatu(langilea);
-            //kudeaketa.ShowDialog();
+            ErabiltzaileakKudeatu kudeaketa = new ErabiltzaileakKudeatu(langilea);
+            kudeaketa.ShowDialog();
+            this.Show();
         }
 
         private void atera_BTN_Click(object sender, EventArgs e)
         {
            
             Application.Exit();
-        }
-
-        private void Menu_Load_1(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,7 +58,7 @@ namespace DA_ENTREGA2_DEF
 
         }
 
-        private void Menu_Load_2(object sender, EventArgs e)
+        private void Menu_Load_1(object sender, EventArgs e)
         {
 
         }

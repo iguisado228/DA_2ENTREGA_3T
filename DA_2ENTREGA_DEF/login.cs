@@ -19,21 +19,6 @@ namespace DA_ENTREGA2_DEF
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
-        private void login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TXT_erabiltzailea_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TXT_pasahitza_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void BTN_sartu_Click(object sender, EventArgs e)
         {
             string erabiltzailea = TXT_erabiltzailea.Text;
@@ -52,20 +37,14 @@ namespace DA_ENTREGA2_DEF
                 MessageBox.Show("Erabiltzaile edo pasahitza ez dira zuzenak.");
             }
         }
-
-        private void LBL_erabiltzailea_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LBL_pasahitza_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void atera_BTN_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,6 +47,5 @@ namespace DA_2ENTREGA_DEF
                 MessageBox.Show("Error general: " + ex.Message);
             }
         }
-
     }
 }

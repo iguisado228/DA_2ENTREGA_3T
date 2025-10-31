@@ -34,7 +34,7 @@
             this.TXT_pasahitza = new System.Windows.Forms.TextBox();
             this.BTN_sartu = new System.Windows.Forms.Button();
             this.atera_BTN = new System.Windows.Forms.Button();
-            this.SuspendLayout(); this.SuspendLayout();
+            this.SuspendLayout();
             // 
             // LBL_erabiltzailea
             // 
@@ -45,7 +45,6 @@
             this.LBL_erabiltzailea.Size = new System.Drawing.Size(312, 58);
             this.LBL_erabiltzailea.TabIndex = 0;
             this.LBL_erabiltzailea.Text = "Erabiltzailea:";
-            this.LBL_erabiltzailea.Click += new System.EventHandler(this.LBL_erabiltzailea_Click);
             // 
             // LBL_pasahitza
             // 
@@ -56,7 +55,6 @@
             this.LBL_pasahitza.Size = new System.Drawing.Size(259, 58);
             this.LBL_pasahitza.TabIndex = 1;
             this.LBL_pasahitza.Text = "Pasahitza:";
-            this.LBL_pasahitza.Click += new System.EventHandler(this.LBL_pasahitza_Click);
             // 
             // TXT_erabiltzailea
             // 
@@ -65,7 +63,6 @@
             this.TXT_erabiltzailea.Name = "TXT_erabiltzailea";
             this.TXT_erabiltzailea.Size = new System.Drawing.Size(558, 64);
             this.TXT_erabiltzailea.TabIndex = 2;
-            this.TXT_erabiltzailea.TextChanged += new System.EventHandler(this.TXT_erabiltzailea_TextChanged);
             // 
             // TXT_pasahitza
             // 
@@ -74,7 +71,6 @@
             this.TXT_pasahitza.Name = "TXT_pasahitza";
             this.TXT_pasahitza.Size = new System.Drawing.Size(558, 64);
             this.TXT_pasahitza.TabIndex = 3;
-            this.TXT_pasahitza.TextChanged += new System.EventHandler(this.TXT_pasahitza_TextChanged);
             // 
             // BTN_sartu
             // 
@@ -98,7 +94,7 @@
             this.atera_BTN.UseVisualStyleBackColor = true;
             this.atera_BTN.Click += new System.EventHandler(this.atera_BTN_Click);
             // 
-            // login
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,9 +105,9 @@
             this.Controls.Add(this.TXT_erabiltzailea);
             this.Controls.Add(this.LBL_pasahitza);
             this.Controls.Add(this.LBL_erabiltzailea);
-            this.Name = "login";
+            this.Name = "Login";
             this.Text = "login";
-            this.Load += new System.EventHandler(this.login_Load);
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

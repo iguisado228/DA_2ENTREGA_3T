@@ -95,8 +95,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErabiltzaileakEzabatu.cs" />
+    <Compile Include="ErabiltzaileakKudeatu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErabiltzaileakKudeatu.Designer.cs">
+      <DependentUpon>ErabiltzaileakKudeatu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Konexioa.cs" />
     <Compile Include="Langilea.cs" />
+    <Compile Include="LangileaEditatu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LangileaEditatu.Designer.cs">
+      <DependentUpon>LangileaEditatu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LangileakKudeatu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LangileakKudeatu.Designer.cs">
+      <DependentUpon>LangileakKudeatu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +130,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ErabiltzaileakKudeatu.resx">
+      <DependentUpon>ErabiltzaileakKudeatu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LangileaEditatu.resx">
+      <DependentUpon>LangileaEditatu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LangileakKudeatu.resx">
+      <DependentUpon>LangileakKudeatu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
