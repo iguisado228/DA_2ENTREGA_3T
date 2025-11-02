@@ -16,21 +16,21 @@ namespace DA_2ENTREGA_DEF
 {
     public partial class langileakKudeatu : Form
     {
-       // private langilea langilea;
+        private Langilea langilea;
 
-     //   public langileakKudeatu(langilea l)
-       // {
-         //   InitializeComponent();
-            //langilea = l;
-          //  this.Load += new EventHandler(langileakKudeatu_Load);
-          //  KargatuLangileak();
-        //    this.WindowState = FormWindowState.Maximized;
-           // this.FormBorderStyle = FormBorderStyle.None;
-      //  }
+        public langileakKudeatu(Langilea l)
+        {
+            InitializeComponent();
+            langilea = l;
+            this.Load += new EventHandler(langileakKudeatu_Load);
+            KargatuLangileak();
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+        }
 
         private void KargatuLangileak()
         {
-         //   Konexioa.Konexioa konexioa = new Konexioa.Konexioa();
+           Konexioa konexioa = new Konexioa();
 
             string kontsulta = @"
                 SELECT 
@@ -46,14 +46,14 @@ namespace DA_2ENTREGA_DEF
 
             try
             {
-              //  using (MySqlConnection kon = new MySqlConnection(konexioa.konexioKatea()))
+                using (MySqlConnection kon = new MySqlConnection(konexioa.konexioKatea()))
                 {
-             //       kon.Open();
+                    kon.Open();
 
-                    //using (MySqlDataAdapter adapter = new MySqlDataAdapter(kontsulta, kon))
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(kontsulta, kon))
                     {
                         DataTable dt = new DataTable();
-                      //  adapter.Fill(dt);
+                        adapter.Fill(dt);
                         dataGridView1.DataSource = dt;
                     }
                 }
@@ -66,7 +66,7 @@ namespace DA_2ENTREGA_DEF
 
         private void langileakKudeatu_Load(object sender, EventArgs e)
         {
-          //  this.Text = "Ongi etorri, " + langilea.erabiltzaile_izena;
+            this.Text = "Ongi etorri, " + langilea.erabiltzaile_izena;
         }
 
         private void ezabatu_BTN_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace DA_2ENTREGA_DEF
                 DataGridViewRow fila = dataGridView1.SelectedRows[0];
                 string nan = fila.Cells["NAN-a"].Value.ToString();
 
-               // langileakEzabatu.langileaEzabatu(nan);
+                LangileaEzabatu.langileaEzabatu(nan);
 
                 KargatuLangileak();
             }
@@ -88,8 +88,8 @@ namespace DA_2ENTREGA_DEF
 
         private void sortu_BTN_Click(object sender, EventArgs e)
         {
-          //  langileaSortu s = new langileaSortu(); 
-          //  s.ShowDialog();
+            LangileaSortu s = new LangileaSortu(); 
+            s.ShowDialog();
 
             KargatuLangileak();
         }
@@ -109,8 +109,8 @@ namespace DA_2ENTREGA_DEF
                 string telefono = fila.Cells["Telefono zenbakia"].Value.ToString();
                 string helbidea = fila.Cells["Helbidea"].Value.ToString();
 
-         //       langileaEditatu ed = new langileaEditatu(izena, abizena1, abizena2, nan, jaiotza_data, posta, telefono, helbidea);
-         //       ed.ShowDialog();
+                LangileaEditatu ed = new LangileaEditatu(izena, abizena1, abizena2, nan, jaiotza_data, posta, telefono, helbidea);
+                ed.ShowDialog();
 
                 KargatuLangileak();
             }
@@ -123,11 +123,6 @@ namespace DA_2ENTREGA_DEF
         private void atzera_BTN_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void lblTitulo_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

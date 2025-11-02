@@ -44,9 +44,10 @@ namespace DA_ENTREGA2_DEF
 
         private void langileakKudeatu_BTN_Click(object sender, EventArgs e)
         {
+
             this.Hide();
-           // langileakKudeatu l = new langileakKudeatu(langilea);
-            //l.ShowDialog();
+            langileakKudeatu LangileKudeaketa = new langileakKudeatu(langilea);
+            LangileKudeaketa.ShowDialog();
             this.Show();
 
         }

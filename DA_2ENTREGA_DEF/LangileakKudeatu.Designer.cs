@@ -140,7 +140,6 @@
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Langileen kudeaketa";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // panelBotones
             // 

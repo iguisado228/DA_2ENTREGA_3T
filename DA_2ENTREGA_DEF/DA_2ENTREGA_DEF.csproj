@@ -110,11 +110,18 @@
     <Compile Include="LangileaEditatu.Designer.cs">
       <DependentUpon>LangileaEditatu.cs</DependentUpon>
     </Compile>
+    <Compile Include="LangileaEzabatu.cs" />
     <Compile Include="LangileakKudeatu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LangileakKudeatu.Designer.cs">
       <DependentUpon>LangileakKudeatu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LangileaSortu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LangileaSortu.Designer.cs">
+      <DependentUpon>LangileaSortu.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -138,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LangileakKudeatu.resx">
       <DependentUpon>LangileakKudeatu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LangileaSortu.resx">
+      <DependentUpon>LangileaSortu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
