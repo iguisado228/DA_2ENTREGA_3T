@@ -1,28 +1,17 @@
-﻿using DA_ENTREGA2_DEF;
-using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Utilities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DA_2ENTREGA_DEF;
-using static DA_2ENTREGA_DEF.Konexioa;
+using DA_ENTREGA2_DEF;
+using MySql.Data.MySqlClient;
 
-namespace DA_2ENTREGA_DEF
+namespace DA_ENTREGA2_DEF
 {
-    public partial class ErabiltzaileakKudeatu : Form
+    public partial class SoftDelete : Form
     {
-
         private Langilea langilea;
-        String ekintza;
-        String xehetasuna;
 
-        public ErabiltzaileakKudeatu(Langilea l)
+        public SoftDelete(Langilea l)
         {
             InitializeComponent();
             langilea = l;
@@ -32,12 +21,21 @@ namespace DA_2ENTREGA_DEF
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
-
         private void KargatuErabiltzaileak()
         {
             Konexioa konexioa = new Konexioa();
 
-            string kontsulta = "SELECT izena AS 'Izena', abizena1 AS 'Lehen abizena', abizena2 AS 'Bigarren abizena', nan AS 'NAN-a', jaiotza_data AS 'Jaiotza data', posta_elektronikoa AS 'Posta elektronikoa', telefono_zenbakia AS 'Telefono zenbakia', helbidea AS 'Helbidea' FROM erabiltzaileak WHERE is_deleted = 0";
+            // Solo usuarios con is_deleted = 1
+            string kontsulta = @"SELECT izena AS 'Izena', 
+                                        abizena1 AS 'Lehen abizena', 
+                                        abizena2 AS 'Bigarren abizena', 
+                                        nan AS 'NAN-a', 
+                                        jaiotza_data AS 'Jaiotza data', 
+                                        posta_elektronikoa AS 'Posta elektronikoa', 
+                                        telefono_zenbakia AS 'Telefono zenbakia', 
+                                        helbidea AS 'Helbidea' 
+                                 FROM erabiltzaileak 
+                                 WHERE is_deleted = 1;";
 
             try
             {
@@ -63,6 +61,7 @@ namespace DA_2ENTREGA_DEF
         {
             this.Text = "Ongi etorri, " + langilea.erabiltzaile_izena;
         }
+
         private void ezabatu_BTN_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -70,9 +69,7 @@ namespace DA_2ENTREGA_DEF
                 DataGridViewRow fila = dataGridView1.SelectedRows[0];
                 string nan = fila.Cells["NAN-a"].Value.ToString();
 
-             Ezabatu.erabiltzaileaEzabatu(nan);
-
-              Erregistroa.AldaketaErregistratu(langilea.erabiltzaile_izena, "DELETE", nan);
+                ErabiltzaileaEzabatu.ErabiltzaileakEzabatu(nan);
 
                 KargatuErabiltzaileak();
             }
@@ -80,14 +77,6 @@ namespace DA_2ENTREGA_DEF
             {
                 MessageBox.Show("Mesedez, aukeratu erabiltzaile bat ezabatzeko.");
             }
-        }
-
-        private void sortu_BTN_Click(object sender, EventArgs e)
-        {
-           Sortu s = new Sortu(langilea);
-           s.ShowDialog();
-
-            KargatuErabiltzaileak();
         }
 
         private void editatu_BTN_Click(object sender, EventArgs e)
@@ -104,21 +93,38 @@ namespace DA_2ENTREGA_DEF
                 string posta = fila.Cells["Posta elektronikoa"].Value.ToString();
                 string telefono = fila.Cells["Telefono zenbakia"].Value.ToString();
                 string helbidea = fila.Cells["Helbidea"].Value.ToString();
+                Editatu ed = new Editatu(izena, abizena1, abizena2, nan, jaiotza_data, posta, telefono, helbidea);
+                ed.ShowDialog();
 
-               Editatu ed = new Editatu(izena, abizena1, abizena2, nan, jaiotza_data, posta, telefono, helbidea);
-               ed.ShowDialog();
+                KargatuErabiltzaileak();
+            }
+        }
 
-               Erregistroa.AldaketaErregistratu(langilea.erabiltzaile_izena, "UPDATE", nan);
+        private void atzera_BTN_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        // Métodos vacíos heredados
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e) { }
+        private void erabiltzaileakKudeatu_Load_1(object sender, EventArgs e) { }
+        
+        private void errekuperatu_BTN_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow fila = dataGridView1.SelectedRows[0];
+                string nan = fila.Cells["NAN-a"].Value.ToString();
+
+                Errekuperatu.erabiltzaileaErrekuperatu(nan);
 
                 KargatuErabiltzaileak();
             }
             else
             {
+                MessageBox.Show("Mesedez, aukeratu erabiltzaile bat ezabatzeko.");
             }
-        }
-        private void atzera_BTN_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void lblTitulo_Click(object sender, EventArgs e)

@@ -95,6 +95,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editatu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editatu.Designer.cs">
+      <DependentUpon>Editatu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ErabiltzaileakEzabatu.cs" />
     <Compile Include="ErabiltzaileakKudeatu.cs">
       <SubType>Form</SubType>
@@ -102,6 +108,9 @@
     <Compile Include="ErabiltzaileakKudeatu.Designer.cs">
       <DependentUpon>ErabiltzaileakKudeatu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Erregistroa.cs" />
+    <Compile Include="Errekuperatu.cs" />
+    <Compile Include="Ezabatu.cs" />
     <Compile Include="Konexioa.cs" />
     <Compile Include="Langilea.cs" />
     <Compile Include="LangileaEditatu.cs">
@@ -137,6 +146,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoftDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoftDelete.Designer.cs">
+      <DependentUpon>SoftDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sortu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sortu.Designer.cs">
+      <DependentUpon>Sortu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Editatu.resx">
+      <DependentUpon>Editatu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ErabiltzaileakKudeatu.resx">
       <DependentUpon>ErabiltzaileakKudeatu.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +188,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SoftDelete.resx">
+      <DependentUpon>SoftDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sortu.resx">
+      <DependentUpon>Sortu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
